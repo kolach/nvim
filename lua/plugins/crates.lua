@@ -1,6 +1,6 @@
 return {
   "saecki/crates.nvim",
-  tag = "unstable",
+  tag = "stable",
   event = { "BufRead Cargo.toml" },
   dependencies = { "hrsh7th/nvim-cmp", "nvim-lua/plenary.nvim" },
   -- ft = { "rust", "toml" },
