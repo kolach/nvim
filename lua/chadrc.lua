@@ -1,7 +1,7 @@
 -- This file  needs to have same structure as nvconfig.lua
 -- https://github.com/markdownd/NvChad/blob/v2.5/lua/nvconfig.lua
 
----@type ChadrcConfig
+-- ---@type ChadrcConfig
 local M = {}
 
 M.ui = {
@@ -37,6 +37,10 @@ M.ui = {
     icons = true,
     style = "atom_colored",
   },
+}
+
+M.term = {
+  sizes = { vsp = 0.5 },
 }
 
 return M
