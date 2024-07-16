@@ -97,7 +97,6 @@ map("n", "<leader>di", function()
 end, { desc = "Inspect configurations" })
 
 -- Trouble
-
 map("n", "<leader>td", "<cmd> Trouble diagnostics toggle <CR>", { desc = "Trouble: diagnostics" })
 map("n", "<leader>tb", "<cmd> Trouble diagnostics toggle filter.buf=0 <CR>", { desc = "Trouble: buffer diagnostics" })
 map("n", "<leader>ts", "<cmd> Trouble symbols toggle focus=false <CR>", { desc = "Trouble: symbols" })
@@ -109,3 +108,6 @@ map(
 )
 map("n", "<leader>tl", "<cmd> Trouble loclist toggle<CR>", { desc = "Trouble: location list" })
 map("n", "<leader>tq", "<cmd> Trouble qflist toggle<CR>", { desc = "Trouble: quickfix list" })
+
+-- Terminal
+map("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
