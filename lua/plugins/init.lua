@@ -6,7 +6,6 @@ return {
       require "configs.conform"
     end,
   },
-
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
@@ -14,33 +13,12 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-
   {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "gopls",
-        "gofumpt",
-        "goimports-reviser",
-        "golines",
-        "delve",
-        "rust-analyzer",
-        "codelldb",
-      },
-    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -107,5 +85,24 @@ return {
         },
       }
     end,
+  },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    opts = {
+      provider = "openai",
+    },
+    build = "make",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      {
+        "grapp-dev/nui-components.nvim",
+        dependencies = {
+          "MunifTanjim/nui.nvim",
+        },
+      },
+      "nvim-lua/plenary.nvim",
+      "MeanderingProgrammer/render-markdown.nvim",
+    },
   },
 }

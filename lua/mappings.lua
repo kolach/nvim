@@ -111,3 +111,18 @@ map("n", "<leader>tq", "<cmd> Trouble qflist toggle<CR>", { desc = "Trouble: qui
 
 -- Terminal
 map("t", "<ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- HTTP
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "http",
+  callback = function()
+    map(
+      "n",
+      "<leader>kk",
+      require("kulala").jump_prev,
+      { desc = "Kulala jump previous", noremap = true, silent = true }
+    )
+    map("n", "<leader>kj", require("kulala").jump_next, { desc = "Kulala jump next", noremap = true, silent = true })
+    map("n", "<leader>kl", require("kulala").run, { desc = "Kulala run", noremap = true, silent = true })
+  end,
+})

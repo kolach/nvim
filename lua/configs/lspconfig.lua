@@ -44,35 +44,8 @@ lspconfig.gopls.setup {
 }
 
 -- typescript
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
 }
-
--- TODO: my old config for lua lsp. Not sure I still need it
--- lua specific setup
--- lspconfig.lua_ls.setup {
---   on_init = on_init,
---   on_attach = on_attach,
---   capabilities = capabilities,
---   settings = {
---     Lua = {
---       diagnostics = {
---         -- Get the language server to recognize the `vim` global
---         globals = {
---           "vim",
---           "require",
---         },
---       },
---       workspace = {
---         -- Make the server aware of Neovim runtime files
---         library = vim.api.nvim_get_runtime_file("", true),
---       },
---       -- Do not send telemetry data containing a randomized but unique identifier
---       telemetry = {
---         enable = false,
---       },
---     },
---   },
--- }
